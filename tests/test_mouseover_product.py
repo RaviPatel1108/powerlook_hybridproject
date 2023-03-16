@@ -11,8 +11,6 @@ class TestMouseoverProduct(WebdriverWrapper):
                              )
     def test_mouseover_product(self, category_name, subcategory_name):
         actions = webdriver.ActionChains(self.driver)
-        # actions.move_to_element(self.driver.find_element(By.XPATH, "//a[normalize-space()='Shirts']")).perform()
-        # actual_subproduct = self.driver.find_element(By.XPATH, "//span[normalize-space()='Oversized Shirts']").text
         actions.move_to_element(self.driver.find_element(By.XPATH, f"//a[normalize-space()='{category_name}']")).perform()
         actual_subcategory_name = self.driver.find_element(By.XPATH, f"//span[normalize-space()='{subcategory_name}']").text
         assert_that(actual_subcategory_name).is_equal_to(subcategory_name)
