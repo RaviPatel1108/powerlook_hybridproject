@@ -1,5 +1,3 @@
-import time
-
 import pytest
 from assertpy import assert_that
 from selenium.webdriver.common.by import By
